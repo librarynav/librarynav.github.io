@@ -1,0 +1,104 @@
+<!doctype html>
+<head>
+<title>ucombi librarian nav | The worlds best library navigator!</title>
+<link rel="shortcut icon" href="../../images/old logo.png"/>
+<script src="jquery.min.js" type="text/javascript"></script>
+</head>
+<body>
+<center algin="center">
+<h1>Library <span>N</span>av</h1>
+ISPP Secondary Knowledge Center
+<form action="convert.html" method="GET">
+<div id="classes">
+Choose the classification:
+<select name="class" id="class">
+<option value="f " selected>fiction</option>
+<option value="af ">adult fiction</option>
+<option value="gn ">graphic novel</option>
+<option value="agn ">adult graphic novel</option>
+<option value="tok ">theory of knowledge</option>
+<option value="r ">reference</option>
+<option value="b ">biography</option>
+<option value=" ">dewey decimal number</option>
+</select>
+</div>
+<div id="dd">
+Dewey decimal number: <input placeholder="200" name="dd" autocomplete="off">
+</div>
+<div id="author">
+And enter the authors last name: <input name="name" autocomplete="off" placeholder="twain" id="auth"/>
+</div>
+<button>submit</button>
+</form>
+</center>
+</body>
+</html>
+<style type="text/css">
+#dd {
+display: none;
+}
+button {
+background-color: #1171FF;
+height: 26px;
+border: none;
+border-radius: 2px;
+margin-left: 5px;
+}
+select {
+-webkit-appearance: none;
+-webkit-border-radius: 2px;
+height: 26px;
+border: 1px solid #1171FF;
+background-color: #FCF7E7;
+}
+select:focus {
+outline: none;
+}
+form {
+padding: 5px;
+}
+div {
+margin: 10px;
+}
+#author {
+position: relative;
+left: -24px;
+margin-top: 20px;
+}
+center {
+margin-top: 15%;
+}
+span {
+color: red;
+}
+input {
+height: 23px;
+width: 106px;
+border-radius: 2px;
+border: 1px solid #1171FF;
+background-color: #FCF7E7;
+}
+body {
+background-color:#FCF7E7;
+margin: 0;
+font-family: sans-serif;
+}
+footer {
+position: fixed;
+bottom: 0px;
+background-color: #BCBCBC;
+width: 100%;
+padding: 2px;
+}
+</style>
+<script type="text/javascript">
+$("#class").change(function(){
+if ($("#class").val() == " "){
+$("#dd").show();
+document.getElementById("auth").required = "false";
+}else{
+$("#dd").hide();
+document.getElementById("auth").required = "true";
+}
+});
+</script>
