@@ -58,11 +58,11 @@ return ( ( str1 == str2 ) ? 0 : ( ( str1 > str2 ) ? 1 : -1 ) );
 }
 var url = window.location
 var q = url.search.substring(url.search.indexOf("q=")+2, url.length);
-var auth = q.substring(q.indexOf("%20"), q.indexOf("%20")+3);
-document.getElementById("cn").innerHTML = q.replace("%20"," ");
-if (q.substring(0, q.indexOf("%20")) == "agn"){
+var auth = q.substring(q.indexOf("+"), q.indexOf("+")+3);
+document.getElementById("cn").innerHTML = q.replace("+"," ");
+if (q.substring(0, q.indexOf("+")) == "agn"){
     document.querySelector("img").src = "../images/6.png";
-}else if (q.substring(0, q.indexOf("%20")) == "f"){
+}else if (q.substring(0, q.indexOf("+")) == "f"){
     if (strcmp("aaa",auth) == -1 && strcmp("har",auth) == 1){
         document.querySelector("img").src = "../images/9.png";
     }else if(strcmp("har",auth) == -1 && strcmp("ree",auth) == 1){
@@ -70,19 +70,19 @@ if (q.substring(0, q.indexOf("%20")) == "agn"){
     }else{
         document.querySelector("img").src = "../images/7.png";
     }
-}else if (q.substring(0, q.indexOf("%20")) == "gn"){
+}else if (q.substring(0, q.indexOf("+")) == "gn"){
     document.querySelector("img").src = "../images/10.png";
-}else if (q.substring(0, q.indexOf("%20")) == "af"){
+}else if (q.substring(0, q.indexOf("+")) == "af"){
     document.querySelector("img").src = "../images/11.png";
-}else if (q.substring(0, q.indexOf("%20")) == "b" || q.substring(0, q.indexOf("%20")) == "r" || q.substring(0, q.indexOf("%20")) == "tok"){
+}else if (q.substring(0, q.indexOf("+")) == "b" || q.substring(0, q.indexOf("+")) == "r" || q.substring(0, q.indexOf("+")) == "tok"){
     document.querySelector("img").src = "../images/5.png";
-}else if (q.substring(0, q.indexOf("%20")) >= 950 && q.substring(0, q.indexOf("%20")) <= 998 || q.substring(0, q.indexOf("%20")) >= 793 && q.substring(0, q.indexOf("%20")) <= 813.3){
+}else if (q.substring(0, q.indexOf("+")) >= 950 && q.substring(0, q.indexOf("+")) <= 998 || q.substring(0, q.indexOf("+")) >= 793 && q.substring(0, q.indexOf("+")) <= 813.3){
     document.querySelector("img").src = "../images/2.png";
-}else if (q.substring(0, q.indexOf("%20")) >= 813.5 && q.substring(0, q.indexOf("%20")) <= 950){
+}else if (q.substring(0, q.indexOf("+")) >= 813.5 && q.substring(0, q.indexOf("+")) <= 950){
     document.querySelector("img").src = "../images/1.png";
-}else if (q.substring(0, q.indexOf("%20")) >= 001 && q.substring(0, q.indexOf("%20")) <= 33.6 || q.substring(0, q.indexOf("%20")) >= 701 && q.substring(0, q.indexOf("%20")) <= 792.02){
+}else if (q.substring(0, q.indexOf("+")) >= 001 && q.substring(0, q.indexOf("+")) <= 33.6 || q.substring(0, q.indexOf("+")) >= 701 && q.substring(0, q.indexOf("+")) <= 792.02){
     document.querySelector("img").src = "../images/3.png";
-}else if (q.substring(0, q.indexOf("%20")) >= 33.7 && q.substring(0, q.indexOf("%20")) <= 700.95){
+}else if (q.substring(0, q.indexOf("+")) >= 33.7 && q.substring(0, q.indexOf("+")) <= 700.95){
     document.querySelector("img").src = "../images/4.png";
 }
 </script>
