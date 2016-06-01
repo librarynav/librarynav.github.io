@@ -1,0 +1,7 @@
+<script type="text/javascript">
+var url = window.location;
+var dd = url.search.substring(url.search.indexOf("dd=")+3, url.search.indexOf("&name"));
+var class_ = url.search.substring(url.search.indexOf("class=")+6, url.search.indexOf("&dd"));
+var name = url.search.substring(url.search.indexOf("name=")+5, url.search.indexOf("name=")+8);
+window.location = "locate?q="+dd+class_+name;
+</script>
