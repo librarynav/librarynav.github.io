@@ -1,7 +1,7 @@
 <!doctype html>
 <head>
-<title>ucombi librarian nav | The worlds best library navigator!</title>
-<link rel="shortcut icon" href="../../images/old logo.png"/>
+<title>ucombi librarian nav ispp elementary</title>
+<script src="../jquery.min.js"></script>
 </head>
 <body>
 <center algin="center">
@@ -15,7 +15,14 @@ Choose the classification:
 <option value="jf">juvenille fiction</option>
 <option value="jgn">juvenielle graphic novel</option>
 <option value="pic">picture book</option>
+<option value="r">reference</option>
+<option value=" ">juvenielle non-fiction</option>
+<option value="mt">Mother Tongue</option>
+<option value="b">Biography</option>
 </select>
+</div>
+<div id="dd">
+Dewey decimal number: <input placeholder="200" name="dd" autocomplete="off">
 </div>
 <div id="author">
 And enter the authors last name: <input name="name" autocomplete="off" placeholder="twain" required/>
@@ -25,6 +32,9 @@ And enter the authors last name: <input name="name" autocomplete="off" placehold
 </body>
 </html>
 <style type="text/css">
+#dd {
+    display: none;
+}
 button {
 background-color: #1171FF;
 height: 26px;
@@ -79,3 +89,14 @@ width: 100%;
 padding: 2px;
 }
 </style>
+<script type="text/javascript">
+$("#class").change(function(){
+if ($("#class").val() == " "){
+$("#dd").show();
+document.getElementById("auth").required = "false";
+}else{
+$("#dd").hide();
+document.getElementById("auth").required = "true";
+}
+});
+</script>

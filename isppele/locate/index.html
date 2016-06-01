@@ -1,0 +1,84 @@
+<!doctype html>
+<head>
+    <title>Secondary library navigator</title>
+</head>
+<body>
+    <div id="loading"></div>
+    <div id="back">
+        <a href="..">&lt;&lt; back</a>
+    </div>
+    <center>
+        <h2>2nd Floor of ISPP Knowledge Center</h2>
+        <div id="display">
+            <img id="map"/>
+            <h3>call number</h3>
+            <span id="cn"></span>
+        </div>
+    </center>
+</body>
+</html>
+<style type="text/css">
+    a {
+        -webkit-appearance: button;
+        -moz-appearance: button;
+        appearance: button;
+        text-decoration: none;
+        color: initial;
+        width: 60px;
+        height: 20px;
+        margin: 10px;
+        padding: 2px;
+        background-color: #FCF7E7;
+    }
+img {
+    width: 500px;
+    height: 500px;
+}
+body {
+    margin: 0;
+    background-color:#FCF7E7;
+    font-family:sans-serif;
+}
+#display {
+    padding: 10px;
+}
+h2 {
+    margin: 0;
+}
+#loading {
+    position: absolute;
+    height: 5px;
+    top: 0;
+    left: 0;
+}
+</style>
+<script type="text/javascript">
+    function strcmp (str1, str2){
+        return ( ( str1 == str2 ) ? 0 : ( ( str1 > str2 ) ? 1 : -1 ) );
+    }
+var url = window.location
+var q = url.search.substring(url.search.indexOf("q=")+2, url.length);
+var auth = q.substring(q.indexOf("+"), q.indexOf("+")+3);
+document.getElementById("cn").innerHTML = q.replace("+"," ");
+if (q.substring(0, q.indexOf("+")) == "mt" | q.substring(0, q.indexOf("+")) == "b"){
+    document.querySelector("img").src = "../images/6.png";
+}else if (q.substring(0, q.indexOf("+")) == "jf"){
+    if (strcmp("aaa",auth) == -1 && strcmp("geg",auth) == 1){
+        document.querySelector("img").src = "../images/8.png";
+    }else if(strcmp("gid",auth) == -1 && strcmp("kur",auth) == 1){
+        document.querySelector("img").src = "../images/5.png";
+    }else{
+        document.querySelector("img").src = "../images/6.png";
+    }
+}else if (q.substring(0, q.indexOf("+")) == "jgn" | q.substring(0, q.indexOf("+")) == "r"){
+    document.querySelector("img").src = "../images/4.png";
+}else if (q.substring(0, q.indexOf("+")) == "ef"){
+    document.querySelector("img").src = "../images/7.png";
+}else if (q.substring(0, q.indexOf("+")) == "pic"){
+    document.querySelector("img").src = "../images/9.png";
+}else if (q.substring(0, q.indexOf("+")) >= 0 && q.substring(0, q.indexOf("+")) <= 595.78){
+    document.querySelector("img").src = "../images/2.png";
+}else if (q.substring(0, q.indexOf("+")) >= 595.79 && q.substring(0, q.indexOf("+")) <= 1000){
+    document.querySelector("img").src = "../images/1.png";
+}
+</script>
