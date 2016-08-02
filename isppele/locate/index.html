@@ -58,7 +58,7 @@ h2 {
     }
 var url = window.location
 var q = url.search.substring(url.search.indexOf("q=")+2, url.length);
-var auth = q.substring(q.indexOf("+"), q.indexOf("+")+3);
+var auth = q.substring(q.indexOf("+")+1, q.length);
 document.getElementById("cn").innerHTML = q.replace("+"," ");
 if (q.substring(0, q.indexOf("+")) == "mt" | q.substring(0, q.indexOf("+")) == "b"){
     document.querySelector("img").src = "../images/6.png";
